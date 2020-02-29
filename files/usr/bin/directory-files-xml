@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+echo "<directory name=\".\">"
+
+for file in "$@"; do
+  echo "  <file name=\"$file\"/>"
+done
+
+echo "</directory>"

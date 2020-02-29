@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build name="saxon">
+
+    <!-- https://www.saxonica.com/html/documentation/configuration/config-interfaces/config-ant.html -->
+    <macrodef name="saxon-xslt">
+        <attribute name="source"/>
+        <attribute name="transform"/>
+        <attribute name="output"/>
+
+        <sequential>
+            <echo>Generating @{output}</echo>
+            <xslt 
+                in="@{source}"
+                style="@{transform}"
+                out="@{output}"
+                classpath="${env.SAXON_HOME}">
+                <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            </xslt>
+        </sequential>
+    </macrodef>
+
+</build>

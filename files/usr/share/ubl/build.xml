@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build name="ubl">
+
+    <!-- Load environment variables -->
+    <property environment="env"/>
+
+    <!-- Import mixins -->
+    <import file="mixin/crane.xml"/>
+    <import file="mixin/saxon.xml"/>
+
+    <target name="all" depends="clean,init,prepare"/>
+
+    <target name="clean">
+        <delete dir="target"/>
+    </target>
+
+    <target name="init">
+        <mkdir dir="target/dist"/>
+        <mkdir dir="target/source"/>
+        <mkdir dir="target/work"/>
+    </target>
+
+    <target name="prepare">
+
+    </target>
+
+</build>

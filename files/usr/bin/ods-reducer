@@ -1,0 +1,5 @@
+#!/bin/sh
+
+project=$(dirname $(dirname $0))
+
+xslt -xsl:$project/share/klakegg/ods-reducer/main.xslt "$@"
